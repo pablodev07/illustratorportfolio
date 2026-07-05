@@ -1,4 +1,5 @@
 import { Image } from '@ui';
+import PropTypes from 'prop-types';
 
 export default function MasonryGrid({ images, galleryLabel }) {
   if (!images || images.length === 0) return null;
@@ -29,3 +30,8 @@ export default function MasonryGrid({ images, galleryLabel }) {
     </div>
   );
 }
+
+MasonryGrid.propTypes = {
+  images: PropTypes.array,
+  galleryLabel: PropTypes.string,
+};

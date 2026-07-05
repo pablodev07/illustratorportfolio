@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function AsteriskBadge({
   size = 200,
   color = '#61C9A8',
@@ -28,3 +30,13 @@ export default function AsteriskBadge({
     </svg>
   );
 }
+
+AsteriskBadge.propTypes = {
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  color: PropTypes.string,
+  strokeColor: PropTypes.string,
+  strokeWidth: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  rotate: PropTypes.number,
+  className: PropTypes.string,
+  style: PropTypes.object,
+};

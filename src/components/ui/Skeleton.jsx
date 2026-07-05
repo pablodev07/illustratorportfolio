@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function Skeleton({ width, height, borderRadius = '8px', className = '', style = {} }) {
   return (
     <div
@@ -12,3 +14,11 @@ export default function Skeleton({ width, height, borderRadius = '8px', classNam
     />
   );
 }
+
+Skeleton.propTypes = {
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  borderRadius: PropTypes.string,
+  className: PropTypes.string,
+  style: PropTypes.object,
+};

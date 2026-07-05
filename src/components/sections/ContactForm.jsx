@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 import { Icon } from '@ui';
 import { useContactForm } from '@hooks';
 
@@ -117,3 +118,20 @@ export default function ContactForm({ buttonVariant = 'btn--white' }) {
     </form>
   );
 }
+
+FormField.propTypes = {
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string,
+  required: PropTypes.bool,
+  value: PropTypes.string,
+  error: PropTypes.string,
+  invalid: PropTypes.bool,
+  className: PropTypes.string,
+  onChange: PropTypes.func,
+  onBlur: PropTypes.func,
+};
+
+ContactForm.propTypes = {
+  buttonVariant: PropTypes.string,
+};

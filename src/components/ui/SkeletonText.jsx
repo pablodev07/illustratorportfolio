@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function SkeletonText({ lines = 3, spacing = '0.7rem', className = '', height }) {
     return (
         <div className={`skeleton-text ${className}`} aria-hidden="true">
@@ -17,3 +19,10 @@ export default function SkeletonText({ lines = 3, spacing = '0.7rem', className 
         </div>
     );
 }
+
+SkeletonText.propTypes = {
+  lines: PropTypes.number,
+  spacing: PropTypes.string,
+  className: PropTypes.string,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import { LanguageSwitcher } from '@ui';
+import PropTypes from 'prop-types';
 
 export default function Header({ linkedBlogPostEn, linkedBlogPostEs }) {
   const { t, i18n } = useTranslation();
@@ -119,3 +120,8 @@ export default function Header({ linkedBlogPostEn, linkedBlogPostEs }) {
     </header>
   );
 }
+
+Header.propTypes = {
+  linkedBlogPostEn: PropTypes.string,
+  linkedBlogPostEs: PropTypes.string,
+};

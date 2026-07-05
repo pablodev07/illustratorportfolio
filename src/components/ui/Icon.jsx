@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function Icon({ name, size = 20, className = '', ...props }) {
   const icons = {
     calendar: (
@@ -74,3 +76,9 @@ export default function Icon({ name, size = 20, className = '', ...props }) {
     </svg>
   );
 }
+
+Icon.propTypes = {
+  name: PropTypes.string.isRequired,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  className: PropTypes.string,
+};

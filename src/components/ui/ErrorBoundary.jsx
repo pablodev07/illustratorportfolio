@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
 export default function ErrorBoundary({ children, showError }) {
   return (
@@ -82,3 +83,18 @@ function ErrorFallback({ error, showError }) {
     </div>
   );
 }
+
+ErrorBoundary.propTypes = {
+  children: PropTypes.node,
+  showError: PropTypes.bool,
+};
+
+ErrorBoundaryInner.propTypes = {
+  children: PropTypes.node,
+  showError: PropTypes.bool,
+};
+
+ErrorFallback.propTypes = {
+  error: PropTypes.object,
+  showError: PropTypes.bool,
+};

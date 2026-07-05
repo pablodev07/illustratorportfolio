@@ -31,7 +31,7 @@
 | `_buttons.scss` | Sistema de botones (.btn, variantes, tamaños) |
 | `_layout.scss` | Header, Footer, Navegación, menú mobile (hamburguesa) |
 | `_forms.scss` | Inputs, labels, validación, estados error/success |
-| `_accordion.scss` | Acordeones de Elementor (FAQ) |
+| `_accordion.scss` | Acordeones del FAQ (`<details>`/`<summary>` nativo) |
 | `_photoswipe.scss` | Personalización del lightbox |
 | `pages/_home.scss` | Hero, Blog, Newsletter, Agenda, Home Gallery |
 | `pages/_gallery.scss` | Galería con filtros y grid |

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function Image({
   src,
   altLocalized = '',
@@ -21,3 +23,13 @@ export default function Image({
     />
   );
 }
+
+Image.propTypes = {
+  src: PropTypes.string.isRequired,
+  altLocalized: PropTypes.string,
+  captionLocalized: PropTypes.string,
+  titleLocalized: PropTypes.string,
+  className: PropTypes.string,
+  fetchPriority: PropTypes.string,
+  loading: PropTypes.string,
+};

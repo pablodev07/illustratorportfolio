@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default function LanguageSwitcher({ linkedBlogPostEn, linkedBlogPostEs }) {
   const { i18n } = useTranslation();
@@ -49,3 +50,8 @@ export default function LanguageSwitcher({ linkedBlogPostEn, linkedBlogPostEs })
     </nav>
   );
 }
+
+LanguageSwitcher.propTypes = {
+  linkedBlogPostEn: PropTypes.string,
+  linkedBlogPostEs: PropTypes.string,
+};

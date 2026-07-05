@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 export default function LoadingText({ isLoading, text = 'Cargando' }) {
   const [visible, setVisible] = useState(false);
@@ -40,3 +41,8 @@ export default function LoadingText({ isLoading, text = 'Cargando' }) {
     </div>
   );
 }
+
+LoadingText.propTypes = {
+  isLoading: PropTypes.bool,
+  text: PropTypes.string,
+};
