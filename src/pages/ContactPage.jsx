@@ -1,12 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import { Layout } from '@layout'
-import { ContactForm, NewsletterSubscribe } from '@sections';
-import { Link } from 'react-router-dom';
+import { ContactForm } from '@sections';
 import { usePageFields } from '@hooks';
 import { LoadingText } from '@ui';
 
 export default function ContactPage() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { title, loading, error, description } = usePageFields('contacto');
 
 

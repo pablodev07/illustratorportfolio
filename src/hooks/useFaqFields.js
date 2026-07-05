@@ -1,5 +1,4 @@
 import { useQuery, gql } from '@apollo/client';
-import { useTranslation } from 'react-i18next';
 
 const GET_FAQ_FIELDS = gql`
   query GetFaqFields($slug: String!) {

@@ -1,12 +1,9 @@
 import { Gallery, Item } from 'react-photoswipe-gallery';
 import 'photoswipe/dist/photoswipe.css';
-import { useTranslation } from 'react-i18next';
 import { Image } from '@ui';
 import PropTypes from 'prop-types';
 
 export default function GalleryGrid({ images, showCaptions }) {
-  const { t } = useTranslation();
-
   if (!images || images.length === 0) return null;
 
   return (

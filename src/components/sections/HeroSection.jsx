@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { useHomeFields } from '@hooks';
 import { Skeleton, SkeletonText, Image } from '@ui';
 
@@ -7,7 +6,6 @@ const TOP_BRUSH = 'https://cms.pablovester.com/wp-content/uploads/2025/03/transp
 const BOTTOM_BRUSH = 'https://cms.pablovester.com/wp-content/uploads/2025/03/transparent-brush-purple-pablovester-watercolor-bottom.png';
 
 export default function HeroSection() {
-  const { t } = useTranslation();
   const { artistPhoto, hero, loading} = useHomeFields();
 
   return (

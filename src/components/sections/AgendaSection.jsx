@@ -46,7 +46,7 @@ export default function AgendaSection() {
     <section ref={sectionRef} className="agenda-section section" aria-labelledby="agenda-title">
       <div className="container">
         <h2 id="agenda-title" className="agenda-section__title">AGENDA</h2>
-        <span className="agenda-section__subtitle japanese">次のイベント"</span>
+        <span className="agenda-section__subtitle japanese">次のイベント</span>
 
         {loading && <LoadingText isLoading={loading} text={t('common.loading')} />}
 

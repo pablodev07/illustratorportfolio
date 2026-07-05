@@ -7,7 +7,7 @@ import { useComicProjects, usePageFields } from '@hooks';
 export default function ComicsPage() {
   const { t, i18n } = useTranslation();
   const { projects, loading, error } = useComicProjects();
-  const { title, description } = usePageFields('comics');
+  const { description } = usePageFields('comics');
 
   const prefix = i18n.language === 'en' ? '/en' : '';
   const isEnglish = i18n.language === 'en';
