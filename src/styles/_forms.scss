@@ -1,0 +1,195 @@
+// =============================================
+// FORMULARIOS
+// =============================================
+@use 'sass:color';
+@use 'tokens' as *;
+
+.form-group {
+  margin-bottom: $space-md;
+
+  &__btn {
+    margin-right: $space-md;
+  }
+}
+
+.form-label {
+  display: block;
+  margin-bottom: $space-xs;
+  font-weight: $font-weight-medium;
+  font-size: $text-sm;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: $space-sm $space-md;
+  font-family: $font-primary;
+  font-size: $text-base;
+  color: $color-text;
+  background-color: $color-white;
+  border: 2px solid $color-text;
+  border-radius: $radius-md;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.15);
+  }
+
+  &::placeholder {
+    color: color.adjust($color-text-light, $lightness: 20%);
+  }
+
+  &--error {
+    border-color: $color-accent;
+    box-shadow: 0 0 0 3px rgba($color-accent, 0.15);
+
+    &:focus {
+      border-color: $color-accent;
+      box-shadow: 0 0 0 3px rgba($color-accent, 0.2);
+    }
+  }
+
+  &--valid {
+    border-color: $color-secondary;
+
+    &:focus {
+      border-color: $color-secondary;
+      box-shadow: 0 0 0 3px rgba($color-secondary, 0.15);
+    }
+  }
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-feedback {
+  margin-top: $space-sm;
+  font-size: $text-sm;
+  display: flex;
+  align-items: center;
+  padding: $space-sm;
+  color: $color-text;
+
+  &--error {
+    background-color: $color-accent;
+    font-weight: $font-weight-medium;
+  }
+
+  &--success {
+    background-color: $color-secondary;
+    font-weight: $font-weight-medium;
+  }
+
+  &__icon {
+    fill: $color-text;
+    padding-right: $space-sm;
+  }
+}
+
+// ----- Contact Section -----
+.contact-section {
+  background-color: $color-primary;
+  color: $color-white;
+  padding-top: $space-3xl;
+
+  &__inner {
+    display: flex;
+    gap: $space-xl;
+    flex-wrap: wrap;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    flex: 1 1 300px;
+
+    img {
+      width: 100%;
+      border-radius: $radius-lg;
+    }
+  }
+
+  &__form {
+    flex: 2 1 350px;
+  }
+
+  &__title {
+    color: $color-white;
+    text-align: right;
+    text-transform: uppercase;
+
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
+    }
+  }
+
+  &__subtitle {
+    display: block;
+    margin-bottom: $space-xl;
+    text-align: right;
+
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
+    }
+  }
+
+  &__description {
+    text-align: right;
+
+    @media (max-width: $breakpoint-md) {
+      text-align: center;
+    }
+  }
+
+
+
+
+  .form-input,
+  .form-textarea {
+
+    &:focus {
+      border-color: $color-white;
+      box-shadow: 0 0 0 3px $color-secondary;
+    }
+
+    &::placeholder {
+      color: rgba($color-white, 0.5);
+    }
+  }
+}
+
+// ----- Newsletter Subscribe -----
+.newsletter-subscribe {
+  padding: $space-2xl 0;
+  text-align: center;
+
+  &__form {
+    display: flex;
+    gap: $space-sm;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: $space-lg auto 0;
+
+    .form-input {
+      flex: 2 1 250px;
+    }
+
+    .btn {
+      flex: 1 1 150px;
+    }
+  }
+
+
+  &__description {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.4;
+  }
+}

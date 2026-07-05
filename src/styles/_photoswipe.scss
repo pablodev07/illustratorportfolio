@@ -1,0 +1,36 @@
+@use 'tokens' as *;
+
+.pswp {
+  --pswp-bg: #18020C;
+}
+
+.pswp__bg {
+  transition: opacity 400ms cubic-bezier(0.4, 0, 0.22, 1) !important;
+}
+
+.pswp__img {
+  border-radius: $radius-lg !important;
+}
+
+.pswp__button {
+  color: #FFEEDB !important;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.pswp__counter {
+  color: #FFEEDB;
+  font-family: $font-primary;
+}
+
+.pswp__caption__center {
+  text-align: center;
+  font-family: $font-primary;
+  font-size: $text-sm;
+  color: $color-bg;
+  max-width: 600px;
+  margin: 0 auto;
+}

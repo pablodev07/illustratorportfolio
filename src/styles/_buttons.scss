@@ -1,0 +1,202 @@
+@use 'sass:color';
+@use 'tokens' as *;
+
+// =============================================
+// BOTONES - Sistema de Diseño
+// =============================================
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-xs;
+  padding: 0.675rem 1.5rem; // 44px de alto mínimo
+  font-family: $font-primary;
+  font-size: $text-base;
+  font-weight: $font-weight-bold;
+  line-height: 1.4;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: $radius-md;
+  box-shadow: 2px 2px 0 $color-text;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  min-height: 44px; // Principio #12: mínimo 44px para touch
+  min-width: 44px;  // Principio #12
+  user-select: none;
+  white-space: nowrap;
+  @media (max-width: $breakpoint-md) {
+      width: 100%;
+    }
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text;
+    outline-offset: 2px;
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  // ----- Variantes -----
+
+  // Principio #2: Primario = acción principal
+  &--primary {
+    background-color: $color-primary;
+    color: $color-white;
+    border-color: $color-text; // Borde negro como tu diseño original
+
+    &:hover {
+      background-color: color.adjust($color-primary, $lightness: -5%);
+      box-shadow: 3px 3px 0 $color-text;
+    }
+
+    &:active {
+      box-shadow: 1px 1px 0 $color-text;
+    }
+  }
+
+  // Principio #2: Secundario = acción alternativa con menos peso
+  &--secondary {
+    background-color: $color-secondary;
+    color: $color-text;
+    border-color: $color-text;
+
+    &:hover {
+      background-color: color.adjust($color-secondary, $lightness: -5%);
+      box-shadow: 3px 3px 0 $color-text;
+    }
+
+    &:active {
+      box-shadow: 1px 1px 0 $color-text;
+    }
+  }
+
+  // Principio #14: Accent = acción especial (newsletter, CTAs)
+  &--accent {
+    background-color: $color-accent;
+    color: $color-white;
+    border-color: $color-text;
+
+    &:hover {
+      background-color: color.adjust($color-accent, $lightness: -5%);
+      box-shadow: 3px 3px 0 $color-text;
+    }
+
+    &:active {
+      box-shadow: 1px 1px 0 $color-text;
+    }
+  }
+
+  // Botón con outline = navegación secundaria
+  &--outline {
+    background-color: transparent;
+    color: $color-text;
+    border: 2px solid $color-text;
+    box-shadow: 2px 2px 0 $color-text;
+
+    &:hover {
+      background-color: $color-text;
+      color: $color-bg;
+    }
+  }
+
+  // Principio #14: Destructive para acciones peligrosas
+  &--destructive {
+    background-color: #D32F2F;
+    color: $color-white;
+    border-color: $color-text;
+    box-shadow: 2px 2px 0 $color-text;
+
+    &:hover {
+      background-color: #B71C1C;
+      box-shadow: 3px 3px 0 $color-text;
+    }
+  }
+
+  // Botón blanco (para fondos oscuros)
+  &--white {
+    background-color: $color-white;
+    color: $color-text;
+    border-color: $color-text;
+    box-shadow: 2px 2px 0 $color-text;
+
+    &:hover {
+      background-color: color.adjust($color-white, $lightness: -5%);
+      box-shadow: 3px 3px 0 $color-text;
+    }
+  }
+
+  // Principio #3: Ghost SOLO para acciones terciarias, con borde sutil
+  &--ghost {
+    background-color: transparent;
+    color: $color-text;
+    border: 2px solid $color-border;
+
+    &:hover {
+      background-color: $color-bg-alt;
+      border-color: $color-text;
+    }
+  }
+
+  // Botón tipo "pill" para filtros y chips
+&--pill {
+  border-radius: $radius-full;
+  padding: 0.4rem 1.25rem;
+  font-size: $text-sm;
+  min-height: 36px;
+  background: $color-bg-alt;
+  color: $color-text;
+  border-color: transparent;
+  box-shadow: none;
+
+  &:hover {
+    background: rgba($color-primary, 0.1);
+    border-color: $color-text;
+  }
+
+  &.btn--pill-active {
+    background: $color-primary;
+    color: $color-white;
+    border-color: $color-text;
+    box-shadow: 2px 2px 0 $color-text;
+    font-weight: $font-weight-bold;
+  }
+}
+
+  // Tamaños
+  &--sm {
+    padding: 0.4rem 1rem;
+    font-size: $text-sm;
+    min-height: 36px;
+  }
+
+  &--lg {
+    padding: 0.875rem 2rem;
+    font-size: $text-md;
+    min-height: 52px;
+  }
+}
+
+// Principio #3: Links claramente distinguibles
+// Los links de navegación NO deben usar .btn, solo <a> con estilos de texto
+a:not(.btn):not(.site-nav__link):not(.site-logo):not(.site-logo__link):not(.pricing-card__link) {
+  color: $color-text;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: $font-weight-medium;
+  &:hover {
+    opacity: 0.8;
+  }
+}

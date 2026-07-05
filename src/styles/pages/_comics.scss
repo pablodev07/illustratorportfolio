@@ -1,0 +1,136 @@
+// =============================================
+// COMICS PAGES
+// =============================================
+@use '../tokens' as *;
+
+// ----- Landing /comics -----
+.comics-landing {
+  padding: $space-xl 0;
+
+  &__description.page_description {
+    margin-bottom: $space-xl;
+  }
+}
+
+.comics-grid {
+  display: flex;
+  gap: $space-xl;
+  flex-wrap: wrap;
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+  }
+}
+
+.comic-card {
+  flex: 1 1 350px;
+}
+
+// ----- Águilas Masonry -----
+.aguilas-page {
+  padding: $space-xl 0;
+
+  &__description {
+    color: $color-text-light;
+    margin-bottom: $space-xl;
+    line-height: 1.4;
+  }
+}
+
+.masonry-grid {
+  column-count: 3;
+  column-gap: $space-md;
+
+  @media (max-width: $breakpoint-md) {
+    column-count: 2;
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    column-count: 1;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: $space-md;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $color-white;
+  border: 2px solid $color-text;
+  box-shadow: 4px 4px 0 $color-text;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__body {
+    padding: $space-md;
+  }
+
+  &__title {
+    font-size: $text-md;
+    margin-bottom: $space-xs;
+    font-weight: $font-weight-bold;
+  }
+
+  &__description {
+    font-size: $text-sm;
+    color: $color-text-light;
+    line-height: 1.5;
+  }
+}
+
+// ----- Fanzine Reader -----
+.fanzine-page {
+  padding: $space-xl 0;
+
+  &__title {
+    margin-bottom: $space-sm;
+  }
+}
+
+.fanzine-reader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__flipbook {
+    margin: 0 auto;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba($color-text, 0.15);
+  }
+
+  &__indicator {
+    margin-top: $space-md;
+    color: $color-text-light;
+    font-size: $text-sm;
+  }
+}
+
+.flipbook-page {
+  width: 100%;
+  height: 100%;
+  background: $color-text;
+}
+
+.flipbook-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+//--Estilos comunes comic project
+.comic-project {
+&__description {
+    margin-bottom: $space-xl;
+    line-height: 1.4;
+  }
+}

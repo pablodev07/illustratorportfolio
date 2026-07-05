@@ -1,0 +1,294 @@
+// =============================================
+// LAYOUT: Header, Footer, Navegación
+// =============================================
+@use 'tokens' as *;
+
+// ----- Layout principal -----
+.site-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.site-main {
+  flex: 1;
+
+  section:last-child {
+    padding-bottom: $space-3xl;
+  }
+}
+
+// ----- Header -----
+.site-header {
+  background-color: $color-text;
+  margin-bottom: $space-3xl;
+
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: $space-md;
+
+    @media (max-width: $breakpoint-xl) {
+      padding: 0 $space-md; // 16px en mobile
+    }
+  }
+}
+
+// ----- Logo -----
+.site-logo {
+  padding-top: $space-xs 0;
+
+  &__main {
+    margin: 0.5rem 0;
+    font-weight: $font-weight-bold;
+    border-radius: $radius-md;
+    color: $color-white;
+    display: block;
+    padding: $space-xs 0;
+  }
+
+  &__link {
+    color: $color-white;
+    text-decoration: none;
+  }
+
+  &__text {
+    font-size: $text-4xl;
+    line-height: 1;
+  }
+
+  &__subtitle {
+    font-family: $font-primary;
+    font-weight: 700;
+    margin-bottom: 0;
+    margin-top: -5px;
+    color: $color-white;
+    letter-spacing: 8px;
+    padding-bottom: $space-xs;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// ----- Navegación -----
+.site-nav {
+  @media (max-width: $breakpoint-xl) {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 350px;
+    height: 100vh;
+    background: $color-text;
+    padding: 6rem $space-xl $space-xl;
+    z-index: 999;
+    transition: right 0.3s ease;
+    overflow-y: auto;
+
+    &--open {
+      right: 0;
+    }
+
+    &__list {
+      flex-direction: column;
+      gap: $space-sm;
+    }
+
+    &__item {
+      width: 100%;
+    }
+
+    &__link {
+      display: block;
+      padding: $space-md;
+      font-size: $text-lg;
+      border-bottom: 1px solid rgba($color-white, 0.1);
+
+      &--active {
+        border-radius: $radius-md;
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: $space-lg;
+    list-style: none;
+    margin: 0;
+    padding: $space-lg;
+    flex-wrap: wrap;
+  }
+
+  &__link {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $color-white;
+    font-weight: $font-weight-regular;
+    padding: $space-xs 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 8px;
+    }
+
+    &--active {
+      color: $color-text;
+      background-color: $color-white;
+      font-weight: $font-weight-bold;
+      border-color: $color-white;
+      border-radius: $radius-md;
+      border: 2px solid transparent;
+      padding: 0.675rem 1.5rem;
+    }
+  }
+
+  &__lang {
+    margin-top: $space-xl;
+    padding-top: $space-lg;
+    border-top: 4px solid $color-primary;
+
+    @media (min-width: $breakpoint-xl) {
+      display: none;
+    }
+  }
+}
+
+// ----- Language Switcher -----
+.lang-switcher {
+  display: flex;
+  gap: $space-xs;
+
+  &__btn {
+    padding: 0.675rem 1.5rem; //estilos de .btn
+    background: transparent;
+    color: $color-white;
+    border: 2px solid $color-white;
+    border-radius: $radius-sm;
+    cursor: pointer;
+    font-weight: $font-weight-regular;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover {
+      background-color: rgba($color-primary, 0.4);
+      color: $color-white;
+    }
+
+    &--active {
+      background-color: $color-primary;
+      border-color: $color-primary;
+      color: $color-white;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+// Language switcher en desktop (visible solo en desktop)
+.site-header__lang-desktop {
+  @media (max-width: $breakpoint-xl) {
+    display: none;
+  }
+}
+
+// =============================================
+// HAMBURGUESA + MENÚ MOBILE
+// =============================================
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  background: none;
+  border: 2px solid $color-white;
+  border-radius: $radius-sm;
+  padding: $space-sm;
+  cursor: pointer;
+  z-index: 1001;
+
+  @media (max-width: $breakpoint-xl) {
+    display: flex;
+  }
+
+  &__line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: $color-white;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+
+  &--open {
+    .hamburger__line:nth-child(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger__line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger__line:nth-child(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+}
+
+// ----- Overlay -----
+.mobile-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba($color-text, 0.6);
+  z-index: 998;
+
+  &--visible {
+    @media (max-width: $breakpoint-xl) {
+      display: block;
+    }
+  }
+}
+
+
+// ----- Footer -----
+.site-footer {
+  background-color: $color-text;
+  padding: $space-xl;
+  text-align: center;
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    gap: $space-lg;
+    margin-bottom: $space-md;
+
+    a {
+      color: $color-text;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $color-primary;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__copy {
+    font-size: $text-sm;
+    color: $color-white
+  }
+}

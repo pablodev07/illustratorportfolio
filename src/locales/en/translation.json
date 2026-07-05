@@ -1,0 +1,69 @@
+{
+    "nav": {
+        "home": "Home",
+        "drawings": "Drawings",
+        "commissions": "Commissions",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "blog": {
+        "empty": "No posts in this language yet.",
+        "backToBlog": "back to blog"
+    },
+    "agenda": {
+        "empty": "No upcoming events",
+        "moreInfo": "more info here"
+    },
+    "common": {
+        "loading": "Loading",
+        "error": "Error: {{message}}",
+        "from": "from",
+        "contact": "Contact",
+        "errorBoundary": "SOMETHING WENT WRONG...",
+        "errorBoundaryTryReload": "Probably it was not your fault, try reloading.",
+        "errorBoundaryReload": "reload the page",
+        "cover": "Cover",
+        "pageNumber": "Pages {{page}}"
+    },
+    "gallery": {
+        "instructions": "Click on each tag to filter the illustrations.",
+        "all": "all",
+        "empty": "No images in this category."
+    },
+    "categories": {
+        "commissions": "commissions",
+        "hobby": "hobby",
+        "pokemon": "pokémon",
+        "products": "products"
+    },
+    "newsletter": {
+        "emailLabel": "Your email address",
+        "placeholder": "you@email.com",
+        "success": "Thanks for subscribing! Check your email to confirm.",
+        "error": "Something went wrong. Are you already subscribed?"
+    },
+    "contact": {
+        "name": "Your name",
+        "email": "Your email",
+        "subject": "Subject",
+        "message": "Your message",
+        "send": "send",
+        "success": "Message sent successfully!",
+        "error": "Error sending message. Please try again."
+    },
+    "form": {
+        "errors": {
+            "required": "This field is required.",
+            "nameMin": "Name should have at least 2 characters.",
+            "emailInvalid": "Enter a valid e-mail",
+            "messageMin": "Message should have at least 10 characters."
+        },
+        "sending": "Sending..."
+    },
+    "notFound": {
+        "title": "PAGE NOT FOUND :(",
+        "description": "The page you're looking for doesn't exist or was moved. But don't leave, maybe you'll like one of these posts:",
+        "backHome": "back to home",
+        "suggestions": "you might like..."
+    }
+}

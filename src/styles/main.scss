@@ -1,0 +1,252 @@
+// =============================================
+// ENTRY POINT - ESTILOS GLOBALES
+// =============================================
+@use 'sass:color';
+@use 'tokens' as *;
+@use 'typography';
+@use 'reset';
+@use 'buttons';
+@use 'layout';
+@use 'forms';
+@use 'accordion';
+@use 'photoswipe';
+@use 'pages/home';
+@use 'pages/gallery';
+@use 'pages/commissions';
+@use 'pages/comics';
+@use 'pages/page404';
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+textarea {
+  resize: none;
+}
+
+
+
+// ===================
+// UTILITIES
+// ===================
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  @media (max-width: $breakpoint-lg) {
+    padding: 0 $space-md; // 16px en mobile
+  }
+}
+
+.section {
+  padding: $space-3xl 0;
+  overflow: hidden;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.page_title {
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: $space-sm;
+  &__nodescription{
+    margin-bottom: $space-xl;
+}
+}
+
+.page_description {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 0.5rem;
+}
+
+
+// =============================================
+// SKELETON LOADING
+// =============================================
+
+.skeleton {
+  background: linear-gradient(to right,
+      $color-bg-alt 30%,
+      color.adjust($color-primary, $lightness: 5%) 50%,
+      color.adjust($color-primary, $lightness: 20%) 70%);
+/*   background-size: 200% 100%; */
+ animation: shimmer 5s;
+  animation-iteration-count: infinite;
+  background-size: 1000px 100%;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+// ----- Background utilities -----
+.bg-default {
+  background-color: $color-bg;
+}
+
+.bg-alt {
+  background-color: $color-bg-alt;
+}
+
+.bg-primary {
+  background-color: $color-primary;
+  color: $color-white;
+}
+
+.bg-secondary {
+  background-color: $color-secondary;
+}
+
+.bg-accent {
+  background-color: $color-accent;
+  color: $color-text;
+}
+
+.bg-white {
+  background-color: $color-white;
+}
+
+// ===================
+// ASTERISK
+// ====================
+.asterisk-badge {
+
+  &:hover {
+    transform: rotate(0deg);
+  }
+}
+
+/* estilos para asterisk en Agenda de Home*/
+.agenda-card__asterisk {
+  width: 330px;
+  height: 330px;
+
+  @media (max-width: $breakpoint-md) {
+    width: 200px;
+    height: 200px;
+  }
+
+}
+
+// ===================
+// LOADING TEXT
+// ====================
+
+.loading-text {
+  &__word {
+    font-family: $font-primary;
+    font-size: clamp(2rem, 5vw, 4rem);
+    -webkit-text-stroke: 2px $color-text;
+    @media (min-width: $breakpoint-lg) {
+      -webkit-text-stroke: 3px $color-text;
+    }
+    font-weight: 900;
+    color: $color-white;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    animation: shadow-dance 1.5s infinite;
+  }
+}
+
+@keyframes shadow-dance {
+  0%, 100% {
+    text-shadow: 
+      5px 5px 0 $color-primary,
+      10px 10px 0 $color-secondary;
+  }
+  50% {
+    text-shadow: 
+      -5px -5px 0 $color-secondary,
+      -10px -10px 0 $color-primary;
+  }
+}
+
+// ===========================
+// CARD
+//=============================
+
+.card {
+  background: $color-white;
+  border-radius: $radius-lg;
+  border: 2px solid $color-text;
+  box-shadow: 4px 4px 0 $color-text;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 $color-text;
+  }
+
+  &__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: $radius-lg;
+    border-top-right-radius: $radius-lg;
+  }
+
+  &__body {
+    padding: $space-lg;
+    border-radius: $radius-lg;
+  }
+
+  &__title {
+    font-size: $text-md;
+    margin-bottom: $space-xs;
+    font-weight: $font-weight-bold;
+    height: $space-3xl;
+  }
+
+  &__date {
+    font-size: $text-sm;
+    margin-bottom: $space-sm;
+    color: $color-text-light;
+  }
+
+  &__categories {
+    display: flex;
+    gap: $space-xs;
+    flex-wrap: wrap;
+    margin-bottom: $space-sm;
+  }
+
+  &__tag {
+    background: $color-bg-alt;
+    padding: 2px $space-sm;
+    border-radius: $radius-full;
+    font-size: $text-xs;
+    color: $color-text-light;
+  }
+
+  &__excerpt {
+    font-size: $text-sm;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+.blog-page__description{
+    margin-bottom: $space-xl;
+  }

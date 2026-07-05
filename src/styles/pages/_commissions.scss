@@ -1,0 +1,237 @@
+// =============================================
+// COMMISSIONS PAGE (mobile-first)
+// =============================================
+@use '../tokens' as *;
+
+// =============================================
+// PRICING CARDS
+// =============================================
+.pricing-card {
+  padding-top: $space-2xl;
+  padding-bottom: $space-3xl;
+  position: relative;
+  overflow: hidden;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+  }
+
+  // ----- Layout desktop -----
+  @media (min-width: $breakpoint-md) {
+    &__inner {
+      display: grid;
+      grid-template-columns: 1fr 4fr;
+      grid-template-areas:
+        "title  image"
+        "info   image"
+        "footer footer";
+      gap: $space-sm $space-2xl;
+      align-items: start;
+    }
+
+    &__title  { grid-area: title;  order: unset; }
+    &__image  { grid-area: image;  order: unset; }
+    &__info   { grid-area: info;   order: unset; }
+    &__footer { grid-area: footer; order: unset; }
+
+    // Reverse: imagen izquierda
+    &--reverse &__inner {
+      grid-template-columns: 3fr 2fr;
+      grid-template-areas:
+        "image title"
+        "image info"
+        "image footer";
+    }
+  }
+
+  // ----- Elementos (mobile-first) -----
+  &__title {
+    order: 1;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media (min-width: $breakpoint-md) {
+      text-align: left;
+    }
+  }
+
+  &__image {
+    order: 2;
+
+    img {
+      width: 100%;
+      border-radius: $radius-lg;
+    }
+  }
+
+  &__info  { order: 3; }
+  &__footer { order: 4; position: relative; }
+
+  &__option {
+    margin-bottom: $space-lg;
+    text-align: center;
+
+    @media (min-width: $breakpoint-md) {
+      text-align: left;
+    }
+  }
+
+  &__price {
+    font-weight: $font-weight-bold;
+    font-size: $text-xl;
+    margin-bottom: $space-xs;
+    text-align: center;
+
+    @media (min-width: $breakpoint-md) {
+      text-align: left;
+      font-size: $text-2xl;
+    }
+  }
+
+  &__description {
+    margin-bottom: $space-sm;
+    width: 100%;
+    text-align: center;
+
+    p { margin-bottom: 0; }
+
+    @media (min-width: $breakpoint-md) {
+      text-align: left;
+    }
+  }
+
+  &__extra {
+    font-size: $text-sm;
+    text-align: center;
+
+    @media (min-width: $breakpoint-md) {
+      text-align: left;
+    }
+  }
+
+  &__note {
+    font-size: $text-base;
+    font-style: italic;
+    text-align: center;
+    margin: $space-md 0;
+    line-height: 1.3;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: $breakpoint-md) {
+      max-width: 440px;
+      margin-left: auto;
+      text-align: right;
+      font-size: $text-md;
+    }
+  }
+
+  &__gallery-link {
+    padding-top: $space-2xl;
+    font-size: $text-xs;
+    text-align: center;
+
+    @media (min-width: $breakpoint-md) {
+      text-align: left;
+    }
+
+    a.pricing-card__link {
+      color: $color-white;
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  &__cta {
+    display: block;
+    text-align: center;
+    margin-top: $space-lg;
+    width: 100%;
+
+    @media (min-width: $breakpoint-md) {
+      width: fit-content;
+      text-align: left;
+    }
+  }
+
+  &__asterisk {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    inset: -35px 0 0 0;
+    margin: auto;
+    z-index: 0;
+
+    @media (min-width: $breakpoint-md) {
+      inset: 0 0 0 auto;
+      margin: 0;
+    }
+  }
+
+  // ----- Alineaciones reverse (Bust) -----
+  @media (min-width: $breakpoint-md) {
+    &--reverse {
+      .pricing-card__note,
+      .pricing-card__price,
+      .pricing-card__option,
+      .pricing-card__description,
+      .pricing-card__title,
+      .pricing-card__extra {
+        text-align: right;
+      }
+
+      .pricing-card__cta {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+// =============================================
+// CONTACT FORM SECTION
+// =============================================
+.commissions-contact {
+  text-align: center;
+  margin-bottom: $space-3xl;
+
+  &__title {
+    margin-bottom: $space-3xl;
+
+    @media (min-width: $breakpoint-md) {
+      text-align: left;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xl;
+
+    @media (min-width: $breakpoint-md) {
+      flex-direction: row;
+    }
+  }
+
+  &__image {
+    flex: 1 1 300px;
+
+    img {
+      width: 100%;
+      border-radius: $radius-lg;
+    }
+  }
+
+  &__form {
+    flex: 1 1 350px;
+    text-align: left;
+  }
+}
+
+// =============================================
+// FAQ LINK
+// =============================================
+.commissions-faq {
+  text-align: center;
+  padding: $space-xl;
+}

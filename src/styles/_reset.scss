@@ -1,0 +1,191 @@
+// =============================================
+// CSS RESET + ESTILOS BASE
+// =============================================
+@use 'tokens' as *;
+
+// ----- Box sizing -----
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $color-bg;
+  min-height: 100vh;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul,
+ol {
+  padding-left: $space-lg;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
+// =============================================
+// CONTENIDO EMBEBIDO (Posts, Páginas de WP)
+// =============================================
+
+.post-single {
+  // ----- Header -----
+  &__header {
+    margin-bottom: $space-xl;
+  }
+
+  &__meta {
+    display: flex;
+    gap: $space-md;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: $text-sm;
+    color: $color-text-light;
+  }
+
+  &__date {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__categories {
+    display: flex;
+    gap: $space-xs;
+  }
+
+  .is-layout-flex{
+    display: flex;
+  }
+
+  // ----- Imagen destacada -----
+  &__image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: $radius-lg;
+    margin-bottom: $space-xl;
+  }
+
+  // ----- Contenido del post -----
+  &__content {
+    font-size: $text-md;
+    line-height: 1.8;
+
+    p {
+      margin-bottom: $space-md;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: $radius-md;
+      margin: $space-lg 0;
+    }
+
+    iframe,
+    video,
+    embed {
+      max-width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      border-radius: $radius-md;
+      margin: $space-lg 0;
+    }
+
+    figure {
+      max-width: 100%;
+      margin: $space-lg 0;
+
+      img {
+        margin: 0;
+      }
+    }
+
+    figcaption,
+    .wp-caption-text {
+      font-size: $text-sm;
+      color: $color-text-light;
+      text-align: center;
+      margin-top: $space-xs;
+      @media (min-width: $breakpoint-md) {
+        text-align: left;
+      }
+    }
+
+    h2,
+    h3,
+    h4 {
+      margin-top: $space-xl;
+      margin-bottom: $space-md;
+    }
+
+    ul,
+    ol {
+      padding-left: $space-lg;
+      margin-bottom: $space-md;
+    }
+
+    blockquote {
+      border-left: 4px solid $color-primary;
+      padding-left: $space-md;
+      margin: $space-lg 0;
+      font-style: italic;
+      color: $color-text-light;
+    }
+
+    a {
+      font-size: $text-md;
+    }
+
+    // Prevenir overflow por atributos width/height inline
+    img[width],
+    img[height] {
+      max-width: 100%;
+      height: auto;
+    }
+
+    // Tablas
+    table {
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      border-collapse: collapse;
+    }
+
+    // Código
+    pre {
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      border-radius: $radius-md;
+      padding: $space-md;
+      background: $color-bg-alt;
+      border: 1px solid $color-border;
+    }
+  }
+
+  // ----- Footer -----
+  &__footer {
+    margin-top: $space-2xl;
+    padding-top: $space-lg;
+    padding-bottom: $space-3xl;
+    border-top: 1px solid $color-border;
+    font-weight: $font-weight-bold;
+  }
+}

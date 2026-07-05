@@ -1,0 +1,69 @@
+{
+    "nav": {
+        "home": "Inicio",
+        "drawings": "Dibujos",
+        "commissions": "Comisiones",
+        "blog": "Blog",
+        "contact": "Contacto"
+    },
+    "blog": {
+        "empty": "No hay posts en este idioma todavía.",
+        "backToBlog": "volver al blog"
+    },
+    "agenda": {
+        "empty": "Sin próximos eventos",
+        "moreInfo": "más info acá!"
+    },
+    "common": {
+        "loading": "Cargando",
+        "error": "Error: {{message}}",
+        "from": "de",
+        "contact": "Contacto",
+        "errorBoundary": "ERROR INESPERADO...",
+        "errorBoundaryTryReload": "No fue tu culpa, probá recargando la página.",
+        "errorBoundaryReload": "recargar la página",
+        "cover": "Tapa",
+        "pageNumber": "Páginas {{page}}"
+    },
+    "gallery": {
+        "instructions": "Clickeá en cada etiqueta para filtrar las ilustraciones.",
+        "all": "todos",
+        "empty": "No hay imágenes en esta categoría."
+    },
+    "categories": {
+        "commissions": "comisiones",
+        "hobby": "hobby",
+        "pokemon": "pokémon",
+        "products": "productos"
+    },
+    "newsletter": {
+        "emailLabel": "tu correo electrónico",
+        "placeholder": "tu@email.com",
+        "success": "gracias por suscribirte! Revisá tu correo para confirmar.",
+        "error": "ups, hubo un error. ya estás suscripto?"
+    },
+    "contact": {
+        "name": "Tu nombre",
+        "email": "Tu e-mail",
+        "subject": "Asunto",
+        "message": "Tu mensaje",
+        "send": "enviar",
+        "success": "Mensaje enviado exitosamente!",
+        "error": "Error al enviar el mensaje. Intentá de nuevo."
+    },
+    "form": {
+        "errors": {
+            "required": "Este campo es obligatorio",
+            "nameMin": "El nombre debe tener al menos 2 caracteres",
+            "emailInvalid": "Ingresá un email válido",
+            "messageMin": "El mensaje debe tener al menos 10 caracteres"
+        },
+        "sending": "Enviando..."
+    },
+    "notFound": {
+        "title": "ESA PÁGINA NO EXISTE :(",
+        "description": "La página que buscás no existe o se mudó. Pero no te vayas! Quizás te interese alguno de estos posts:",
+        "backHome": "volver al inicio",
+        "suggestions": "quizás te interese..."
+    }
+}

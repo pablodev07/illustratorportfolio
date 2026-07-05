@@ -1,0 +1,110 @@
+// =============================================
+// TIPOGRAFÍAS
+// =============================================
+@use 'tokens' as *;
+// ----- GT Maru (tipografía principal) -----
+@font-face {
+  font-family: 'GT Maru';
+  src: url('/fonts/GT-Maru/GT-Maru-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Maru';
+  src: url('/fonts/GT-Maru/GT-Maru-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Maru';
+  src: url('/fonts/GT-Maru/GT-Maru-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Maru';
+  src: url('/fonts/GT-Maru/GT-Maru-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ----- Zen Maru Gothic (texto japonés) -----
+@font-face {
+  font-family: 'Zen Maru Gothic';
+  src: url('/fonts/ZenMaruGothic/ZenMaruGothic-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+// ----- Estilos base de texto -----
+html {
+  font-family: $font-primary;
+  font-size: 16px;
+  color: $color-text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, .h1 {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $text-3xl;
+  line-height: 1;
+  margin: 0 0 $space-md;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $text-6xl;
+  }
+}
+
+h2, .h2 {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $text-2xl;
+  line-height: 1;
+  margin: 0 0 $space-md;
+  
+  @media (min-width: $breakpoint-md) {
+    font-size: $text-4xl;
+  }
+}
+
+h3, .h3 {
+  font-family: $font-primary;
+  font-weight: $font-weight-bold;
+  font-size: $text-xl;
+  line-height: 1.2;
+  margin: 0 0 $space-lg;
+  @media (min-width: $breakpoint-md) {
+    font-size: $text-2xl;
+  }
+}
+
+p, .body-text {
+  font-size: $text-base;
+  line-height: 1.4;
+  margin: 0 0 $space-xl;
+}
+
+small, .text-sm {
+  font-size: $text-sm;
+}
+
+// Texto japonés
+.japanese, [lang="ja"] {
+  font-family: $font-japanese;
+  line-height: 0;
+  font-size: $text-base;
+  font-weight: 900;
+  @media (min-width: $breakpoint-lg) {
+      font-size: $text-xl;
+  }
+}

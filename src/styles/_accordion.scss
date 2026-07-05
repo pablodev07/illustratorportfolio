@@ -1,0 +1,101 @@
+// =============================================
+// ACORDEONES (FAQ)
+// =============================================
+@use 'sass:color';
+@use 'tokens' as *;
+
+.faq-title{
+  white-space: pre-line;
+}
+
+.faq-description.page_description {
+  margin-bottom: $space-xl;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  font-size: $text-base;
+}
+
+.faq-item {
+  overflow: hidden;
+  box-shadow: 2px 2px 0 $color-text;
+  border: 2px solid $color-text;
+  border-radius: $radius-md;
+  margin-bottom: $space-sm;
+  overflow: hidden;
+
+  &__question {
+    padding: $space-md $space-lg;
+    background: $color-bg-alt;
+    cursor: pointer;
+    font-weight: $font-weight-bold;
+    display: flex;
+    align-items: center;
+    gap: $space-sm;
+    user-select: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: $text-base;
+    color: $color-text;
+    transition: background-color 0.2s ease;
+    line-height: 1.8;
+
+    &::marker {
+      display: none;
+    }
+
+    &:hover {
+      background: color.adjust($color-bg-alt, $lightness: -3%);
+    }
+  }
+
+  &__answer {
+    padding: $space-md $space-lg;
+    line-height: 1.8;
+    display: block;
+    background: $color-white;
+  }
+
+  // Icono "+" (cerrado) y "−" (abierto)
+  &__icon-closed::before,
+  &__icon-opened::before {
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  // Estado cerrado: mostrar "+"
+  &[open] &__icon-opened::before {
+    content: '−';
+    font-size: $text-lg;
+    font-weight: $font-weight-regular;
+    color: $color-primary;
+  }
+
+  &__icon-closed::before {
+    content: '+';
+    font-size: $text-lg;
+    font-weight: $font-weight-regular;
+    color: $color-primary;
+  }
+
+  // Estado abierto: ocultar "+"
+  &[open] &__icon-closed {
+    display: none;
+  }
+
+  // Estado cerrado: ocultar "−"
+  &:not([open]) &__icon-opened {
+    display: none;
+  }
+
+  // Fondo violeta cuando está abierto
+  /* &[open] &__question {
+    background: $color-primary;
+    color: $color-white;
+  } */
+}
