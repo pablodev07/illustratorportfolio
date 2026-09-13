@@ -44,6 +44,15 @@
   font-display: swap;
 }
 
+// ----- Adobe Font Appare (texto japonés para header) -----
+@font-face {
+  font-family: 'AB Appare';
+  src: url('/fonts/AB-Appare.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 // ----- Estilos base de texto -----
 html {
   font-family: $font-primary;
@@ -101,6 +110,16 @@ small, .text-sm {
 // Texto japonés
 .japanese, [lang="ja"] {
   font-family: $font-japanese;
+  line-height: 0;
+  font-size: $text-base;
+  font-weight: 900;
+  @media (min-width: $breakpoint-lg) {
+      font-size: $text-xl;
+  }
+}
+
+.japanese-title, [lang="ja"] {
+  font-family: $font-japanese-title;
   line-height: 0;
   font-size: $text-base;
   font-weight: 900;

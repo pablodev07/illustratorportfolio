@@ -50,7 +50,7 @@ export default function Header({ linkedBlogPostEn, linkedBlogPostEs }) {
         {/* Logo */}
         <div className="site-logo">
           <Link to={prefix || '/'} className="site-logo__main site-logo__link" aria-label={t('nav.home')}>
-            <span className="site-logo__text japanese">ベスター</span>
+            <span className="site-logo__text japanese-title">ベスター</span>
           </Link>
           <p className="site-logo__subtitle">PABLO VESTER</p>
         </div>

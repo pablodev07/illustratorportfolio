@@ -34,3 +34,11 @@
   max-width: 600px;
   margin: 0 auto;
 }
+
+.pswp__default-caption {
+  background-color: rgba(0, 0, 0, 0.34);
+  min-height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
