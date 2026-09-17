@@ -1,0 +1,90 @@
+{
+  "format": "apollo-persisted-query-manifest",
+  "version": 1,
+  "operations": [
+    {
+      "id": "5cfe7483fb9156f2366c44b227d4b1552d0a00678b15490a97e512bc4a76f667",
+      "name": "GetComicPageImages",
+      "type": "query",
+      "body": "query GetComicPageImages($project: String!) {\n  comicPages(\n    where: {orderby: {field: MENU_ORDER, order: ASC}, metaQuery: {metaArray: [{key: \"project\", value: $project, compare: EQUAL}]}}\n  ) {\n    nodes {\n      id\n      title\n      comicPageFields {\n        project\n        titleEs\n        titleEn\n        descriptionEs\n        descriptionEn\n        image {\n          node {\n            sourceUrl\n            altText\n            caption\n            title\n            imageTranslations {\n              altEn\n              captionEn\n              titleEn\n              __typename\n            }\n            mediaDetails {\n              width\n              height\n              __typename\n            }\n            __typename\n          }\n          __typename\n        }\n        order\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "c032f42935702409c69243c5af661de31c98501c333880de06cb7d9d99dc137e",
+      "name": "GetComicProject",
+      "type": "query",
+      "body": "query GetComicProject {\n  comicPages(first: 100) {\n    nodes {\n      id\n      comicPageFields {\n        project\n        order\n        titleEs\n        titleEn\n        descriptionEs\n        descriptionEn\n        image {\n          node {\n            sourceUrl\n            altText\n            caption\n            title\n            imageTranslations {\n              altEn\n              captionEn\n              titleEn\n              __typename\n            }\n            mediaDetails {\n              width\n              height\n              __typename\n            }\n            __typename\n          }\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "660d540e0871e5ec8a53faecfd73855408740a958b70035583123b3ad4240f37",
+      "name": "GetComicProjects",
+      "type": "query",
+      "body": "query GetComicProjects {\n  comicProjects(where: {orderby: {field: DATE, order: ASC}}) {\n    nodes {\n      id\n      title\n      comicProjectFields {\n        titleEs\n        titleEn\n        descriptionEs\n        descriptionEn\n        displayType\n        coverImage {\n          node {\n            sourceUrl\n            altText\n            caption\n            title\n            imageTranslations {\n              altEn\n              captionEn\n              titleEn\n              __typename\n            }\n            __typename\n          }\n          __typename\n        }\n        slug\n        ctaEs\n        ctaEn\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "0c2ad60ff6d9383640d06ca4cdd50635e85e8f6bc505b174ef6d8241f9b1a082",
+      "name": "GetCommissions",
+      "type": "query",
+      "body": "query GetCommissions {\n  pageBy(uri: \"comisiones\") {\n    commissionsFields {\n      pokemonImage {\n        node {\n          sourceUrl\n          altText\n          __typename\n        }\n        __typename\n      }\n      bustImage {\n        node {\n          sourceUrl\n          altText\n          __typename\n        }\n        __typename\n      }\n      pokemonTitleEs\n      pokemonTitleEn\n      pokemon1Usd\n      pokemon2Usd\n      pokemonExtraUsd\n      bustUsd\n      bustExtraUsd\n      pokemonOpt1DescEs\n      pokemonOpt1DescEn\n      pokemonOpt2DescEs\n      pokemonOpt2DescEn\n      pokemonExtraDescEs\n      pokemonExtraDescEn\n      bustTitleEs\n      bustTitleEn\n      bustDescEs\n      bustDescEn\n      bustExtraDescEs\n      bustExtraDescEn\n      pokemonGalleryEs\n      pokemonGalleryEn\n      pokemonCtaEs\n      pokemonCtaEn\n      bustCtaEs\n      bustCtaEn\n      noteEs\n      noteEn\n      contactTitleEs\n      contactTitleEn\n      faqLinkEs\n      faqLinkEn\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "3768004764cd9eb326d3be1de5758cfd6ac71302f6fe5c02cfa65cdd7dd8e49c",
+      "name": "GetCotizacion",
+      "type": "query",
+      "body": "query GetCotizacion {\n  cotizacionDolar\n}"
+    },
+    {
+      "id": "fb071b600c0b77cb9207d7450ba672c069570f458aa5c03d01380a5809a37c26",
+      "name": "GetEvents",
+      "type": "query",
+      "body": "query GetEvents {\n  events {\n    nodes {\n      id\n      title\n      excerpt\n      featuredImage {\n        node {\n          sourceUrl\n          altText\n          __typename\n        }\n        __typename\n      }\n      eventFields {\n        eventDate\n        eventTime\n        location\n        externalLink\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "41113affccf9fee03d76627832c15ab4074b9cfa16f8a85127858994de7061d4",
+      "name": "GetFaqFields",
+      "type": "query",
+      "body": "query GetFaqFields($slug: String!) {\n  pageBy(uri: $slug) {\n    faqFields {\n      faq1QEs\n      faq1QEn\n      faq1AEs\n      faq1AEn\n      faq2QEs\n      faq2QEn\n      faq2AEs\n      faq2AEn\n      faq3QEs\n      faq3QEn\n      faq3AEs\n      faq3AEn\n      faq4QEs\n      faq4QEn\n      faq4AEs\n      faq4AEn\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "f9e8c65472569188ae00d827c283acc98ba05848d2ca0cd30777caf615764cc9",
+      "name": "GetGallery",
+      "type": "query",
+      "body": "query GetGallery {\n  mediaItems(first: 100) {\n    nodes {\n      id\n      sourceUrl\n      altText\n      caption\n      title\n      imageTranslations {\n        altEn\n        captionEn\n        titleEn\n        __typename\n      }\n      mediaDetails {\n        width\n        height\n        sizes {\n          name\n          sourceUrl\n          __typename\n        }\n        __typename\n      }\n      attachmentCategories\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "cfdf6ade7f37dc9c2535b566942ed9db7c93c003c12d43dd836087bc5bc2aab2",
+      "name": "GetHomeFields",
+      "type": "query",
+      "body": "query GetHomeFields {\n  pageBy(uri: \"/\") {\n    featuredImage {\n      node {\n        sourceUrl\n        altText\n        title\n        imageTranslations {\n          altEn\n          titleEn\n          __typename\n        }\n        mediaDetails {\n          sizes {\n            name\n            sourceUrl\n            __typename\n          }\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    homePageFields {\n      heroTitleEs\n      heroTitleEn\n      heroSubtitleEs\n      heroSubtitleEn\n      heroDescriptionEs\n      heroDescriptionEn\n      heroCtaEs\n      heroCtaEn\n      galleryTitleEs\n      galleryTitleEn\n      galleryDescriptionEs\n      galleryDescriptionEn\n      galleryCtaEs\n      galleryCtaEn\n      blogTitleEs\n      blogTitleEn\n      blogDescriptionEs\n      blogDescriptionEn\n      blogReadMoreEs\n      blogReadMoreEn\n      blogCtaEs\n      blogCtaEn\n      newsletterTextEs\n      newsletterTextEn\n      newsletterCtaEs\n      newsletterCtaEn\n      contactTitleEs\n      contactTitleEn\n      contactDescriptionEs\n      contactDescriptionEn\n      contactImage {\n        node {\n          sourceUrl\n          altText\n          title\n          imageTranslations {\n            altEn\n            captionEn\n            titleEn\n            __typename\n          }\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "21f30706455ac7abf177450f804a055d2176908d729966676c5066fd08c47523",
+      "name": "GetHomeGallery",
+      "type": "query",
+      "body": "query GetHomeGallery {\n  homeGalleryImages(where: {orderby: {field: DATE, order: ASC}}) {\n    nodes {\n      featuredImage {\n        node {\n          sourceUrl\n          altText\n          caption\n          databaseId\n          imageTranslations {\n            altEn\n            captionEn\n            titleEn\n            __typename\n          }\n          mediaDetails {\n            width\n            height\n            sizes {\n              name\n              sourceUrl\n              __typename\n            }\n            __typename\n          }\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "1614d648149e1b3edd646e8df918f66e37fc39eb2369650f0fe260256de75f1a",
+      "name": "GetPageById",
+      "type": "query",
+      "body": "query GetPageById($id: ID!) {\n  page(id: $id, idType: DATABASE_ID) {\n    pageFields {\n      titleEs\n      titleEn\n      descriptionEs\n      descriptionEn\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "756a3abdb7ef95db386cc24683571bf12c7de1f974ba61fbc6d4951bbe3a0e31",
+      "name": "GetPageByUri",
+      "type": "query",
+      "body": "query GetPageByUri($slug: String!) {\n  pageBy(uri: $slug) {\n    pageFields {\n      titleEs\n      titleEn\n      descriptionEs\n      descriptionEn\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "2fd455f4f501c1b7d776c52c1e4e8737571a6cc36d9ad0a8c5ddfaf084585f99",
+      "name": "GetPost",
+      "type": "query",
+      "body": "query GetPost($slug: ID!) {\n  post(id: $slug, idType: SLUG) {\n    title\n    date\n    content\n    featuredImage {\n      node {\n        sourceUrl\n        altText\n        __typename\n      }\n      __typename\n    }\n    categories {\n      nodes {\n        name\n        slug\n        __typename\n      }\n      __typename\n    }\n    postTranslations {\n      linkedPostEn {\n        nodes {\n          ... on Post {\n            slug\n            __typename\n          }\n          __typename\n        }\n        __typename\n      }\n      linkedPostEs {\n        nodes {\n          ... on Post {\n            slug\n            __typename\n          }\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
+    },
+    {
+      "id": "acb063ef54cb51cdf80f3e7c929ff82b8f3ba03820bf6ded1d60cca7566d2139",
+      "name": "GetPosts",
+      "type": "query",
+      "body": "query GetPosts {\n  posts(first: 100) {\n    nodes {\n      title\n      slug\n      excerpt\n      date\n      featuredImage {\n        node {\n          sourceUrl\n          altText\n          caption\n          title\n          imageTranslations {\n            altEn\n            captionEn\n            titleEn\n            __typename\n          }\n          mediaDetails {\n            sizes {\n              name\n              sourceUrl\n              __typename\n            }\n            __typename\n          }\n          __typename\n        }\n        __typename\n      }\n      categories {\n        nodes {\n          name\n          slug\n          __typename\n        }\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
+    }
+  ]
+}

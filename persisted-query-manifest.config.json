@@ -1,0 +1,4 @@
+{
+  "documents": ["src/**/*.{js,jsx}"],
+  "output": "src/persisted-query-manifest.json"
+}
