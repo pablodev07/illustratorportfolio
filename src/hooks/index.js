@@ -1,7 +1,6 @@
 export { usePosts } from './usePosts';
 export { usePost } from './usePost';
 export { useGallery } from './useGallery';
-export { useComicPageImages } from './useComicPageImages';
 export { useComicProject } from './useComicProject';
 export { useComicProjects } from './useComicProjects';
 export { useHomeFields } from './useHomeFields';

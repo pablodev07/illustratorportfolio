@@ -3,12 +3,6 @@
   "version": 1,
   "operations": [
     {
-      "id": "5cfe7483fb9156f2366c44b227d4b1552d0a00678b15490a97e512bc4a76f667",
-      "name": "GetComicPageImages",
-      "type": "query",
-      "body": "query GetComicPageImages($project: String!) {\n  comicPages(\n    where: {orderby: {field: MENU_ORDER, order: ASC}, metaQuery: {metaArray: [{key: \"project\", value: $project, compare: EQUAL}]}}\n  ) {\n    nodes {\n      id\n      title\n      comicPageFields {\n        project\n        titleEs\n        titleEn\n        descriptionEs\n        descriptionEn\n        image {\n          node {\n            sourceUrl\n            altText\n            caption\n            title\n            imageTranslations {\n              altEn\n              captionEn\n              titleEn\n              __typename\n            }\n            mediaDetails {\n              width\n              height\n              __typename\n            }\n            __typename\n          }\n          __typename\n        }\n        order\n        __typename\n      }\n      __typename\n    }\n    __typename\n  }\n}"
-    },
-    {
       "id": "c032f42935702409c69243c5af661de31c98501c333880de06cb7d9d99dc137e",
       "name": "GetComicProject",
       "type": "query",
