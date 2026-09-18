@@ -12,7 +12,7 @@ export default function FAQPage() {
   return (
     <Layout>
       <section className="container">
-        <h1 className="page_title">{title || t('faq.title')}</h1>
+        {title && <h1 className="page_title">{title || t('faq.title')}</h1> }
         {description && <p className="page_description" dangerouslySetInnerHTML={{ __html: description }}/>}
 
         {loading && <LoadingText isLoading={loading} text={t('common.loading')} />}
